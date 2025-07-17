@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AnalysisResponse } from '../../../../../../../shared/dtos/analysis-response';
+import { AnalysisResponse } from '../../../core/dtos/analysis-response';
 import { CommonModule } from '@angular/common';
 import { LoaderComponent } from "../../../shared/loader/loader.component";
 

@@ -3,8 +3,13 @@
     <h1 class="title">Content categorization</h1>
 
     <div class="main-content">
-        <app-prompt-input (submitText)="onTextSubmit($event)"></app-prompt-input>
-        
+        <div class="input-container">
+            <app-prompt-input (submitText)="onTextSubmit($event)"></app-prompt-input>
+
+            <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+            </div>
+        </div>
         <app-result [result]="result" [loading]="loading"></app-result>
     </div>
 </div>

@@ -1,12 +1,12 @@
 import { BadGatewayException, Injectable } from '@nestjs/common';
 import { OpenaiService } from 'src/openai/openai.service';
-import { AnalysisResponseDto } from './dtos/analysis-response.dto';
+import { AnalysisResponse } from './dtos/analysis-response';
 
 @Injectable()
 export class AnalysisService {
-    constructor(private openai: OpenaiService) { }
+    constructor(private openaiService: OpenaiService) { }
 
-    async analyze(text: string): Promise<AnalysisResponseDto> {
+    async analyze(text: string): Promise<AnalysisResponse> {
         const prompt = `
           You are an expert text analyzer.
           Your task is to analyze the user-provided text and output ONLY valid JSON with these three parameters:
@@ -36,9 +36,9 @@ export class AnalysisService {
           """
           `;
             
-        const raw = await this.openai.runAnalysis(prompt);
+      const raw = await this.openaiService.runAnalysis(prompt);
         try {
-            return JSON.parse(raw) as AnalysisResponseDto;
+            return JSON.parse(raw) as AnalysisResponse;
         } catch {
             throw new BadGatewayException(`Invalid JSON from OpenAI: ${raw}`);
         }

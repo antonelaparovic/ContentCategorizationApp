@@ -29,6 +29,18 @@
     overflow: hidden;
 }
 
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+.error-message {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    color: #be2d2d;
+}
 main-content app-result {
     display: block;
     min-width: 400px;

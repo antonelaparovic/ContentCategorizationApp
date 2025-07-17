@@ -3,9 +3,10 @@ import { Component } from '@angular/core';
 import { PromptInputComponent } from '../prompt-input/prompt-input.component';
 import { ResultComponent } from '../result/result.component';
 import { AnalysisService } from '../../../core/services/analysis.service';
-import { finalize } from 'rxjs';
-import { AnalysisResponse } from "../../../../../../../shared/dtos/analysis-response";
-import { AnalysisRequest } from "../../../../../../../shared/dtos/analysis-request";
+import { catchError, finalize, of } from 'rxjs';
+import { AnalysisResponse } from "../../../core/dtos/analysis-response";
+import { AnalysisRequest } from "../../../core/dtos/analysis-request";
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-main-page',
@@ -21,18 +22,34 @@ export class MainPageComponent {
   result: AnalysisResponse | null = null;
   loading = false;
 
+  errorMessage: string | null = null;
+
   constructor(private analysisService: AnalysisService) { }
 
   onTextSubmit(text: string) {
     this.loading = true;
+    this.errorMessage = null;
+
     var prompt: AnalysisRequest = {
       text: text
     }
-    this.analysisService.analyzeText(prompt)
-      .pipe(finalize(() => this.loading = false))
-      .subscribe({
-        next: res => this.result = res,
-        error: () => this.result = null
+    this.analysisService.analyzeText(prompt).pipe(
+    finalize(() => this.loading = false),
+
+      catchError((err: HttpErrorResponse) => {
+        this.errorMessage = err.error?.message
+          || 'An error occured, try again';
+        return of<AnalysisResponse | null>(null);
+      })
+    ).subscribe(res => {
+        if (res) {
+          // success
+          this.result = res;
+          this.errorMessage = (res as any).message || null;
+        } else {
+          // error
+          this.result = null;
+        }
       });
   }
 }

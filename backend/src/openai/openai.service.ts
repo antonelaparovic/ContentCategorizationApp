@@ -24,7 +24,10 @@ export class OpenaiService {
             this.config.timeoutMs,
         );
 
-        const words = prompt.trim().split(/\s+/).length;
+        const trimmed = prompt.trim();
+        // trim words between spaces
+        const wordMatches = trimmed.match(/\b\w+\b/g);
+        const words = wordMatches?.length ?? 0;
         if (words > this.config.maxPromptWords) {
             throw new BadRequestException(
                 `Prompt has ${words} words, allowed max ${this.config.maxPromptWords}`,

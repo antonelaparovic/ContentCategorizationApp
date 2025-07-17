@@ -1,7 +1,7 @@
 import { Body, Controller, Post, ValidationPipe } from '@nestjs/common';
 import { AnalysisService } from './analysis.service';
-import { AnalysisRequest } from '../../../shared/dtos/analysis-request';
-import { AnalysisResponse } from '../../../shared/dtos/analysis-response';
+import { AnalysisRequest } from './dtos/analysis-request';
+import { AnalysisResponse } from './dtos/analysis-response';
 
 @Controller('analysis')
 export class AnalysisController {
