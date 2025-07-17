@@ -1,0 +1,13 @@
+<div class="result-display" *ngIf="loading || result">
+    <app-loader *ngIf="loading" [loaderSrc]="'assets/loader.svg'" [size]="'3rem'">
+    </app-loader>
+
+    <div *ngIf="!loading && result">
+        <h3>Category: {{ result.category }}</h3>
+        <h3>Sentiment: {{ result.sentiment }}</h3>
+        <h3 class="keywords-title">Keywords:</h3>
+        <ul class="tag-list">
+            <li *ngFor="let k of result.keywords" class="tag">{{ k }}</li>
+        </ul>
+    </div>
+</div>

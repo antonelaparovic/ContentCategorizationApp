@@ -1,0 +1,30 @@
+.result-display {
+    border-radius: 8px;
+    padding: 1rem;
+    width: 400px;
+    margin-top: 1rem;
+    color: var(--light-yellow);
+    min-height: 200px;
+    font-size: 16px;
+}
+
+/* remove bullets and inner padding/margin */
+ul {
+    list-style: none !important;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem 0.5rem;
+}
+
+/* style each keyword as a tag */
+li {
+    background-color: #d6dec1;
+    border: 1px solid #90bb75;
+    border-radius: 999px;
+    padding: 0.25em 0.75em;
+    color: #2E4A1C;
+    width: fit-content;
+    white-space: nowrap;
+}
