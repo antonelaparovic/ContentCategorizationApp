@@ -2,10 +2,13 @@
     border-radius: 8px;
     padding: 1rem;
     width: 400px;
-    margin-top: 1rem;
     color: var(--light-yellow);
     min-height: 200px;
     font-size: 16px;
+}
+
+h1 {
+    padding-bottom: 2rem;
 }
 
 /* remove bullets and inner padding/margin */

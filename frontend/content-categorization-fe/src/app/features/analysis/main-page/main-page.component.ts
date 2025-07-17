@@ -4,9 +4,8 @@ import { PromptInputComponent } from '../prompt-input/prompt-input.component';
 import { ResultComponent } from '../result/result.component';
 import { AnalysisService } from '../../../core/services/analysis.service';
 import { finalize } from 'rxjs';
-import { AnalysisResponse } from '../../../core/models/analysis-response';
-import { AnalysisRequest } from '../../../core/models/analysis-request';
-import { LoaderComponent } from "../../../shared/loader/loader.component";
+import { AnalysisResponse } from "../../../../../../../shared/dtos/analysis-response";
+import { AnalysisRequest } from "../../../../../../../shared/dtos/analysis-request";
 
 @Component({
   selector: 'app-main-page',
@@ -14,7 +13,6 @@ import { LoaderComponent } from "../../../shared/loader/loader.component";
     CommonModule,
     PromptInputComponent,
     ResultComponent,
-    LoaderComponent
 ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'

@@ -4,10 +4,14 @@ import { AppService } from './app.service';
 import { OpenaiModule } from './openai/openai.module';
 import { AnalysisModule } from './analysis/analysis.module';
 import { ConfigModule } from '@nestjs/config';
+import openaiConfig from './config/openai.config';
 
 @Module({
   imports: [OpenaiModule, AnalysisModule, ConfigModule.forRoot({
-    isGlobal: true }),],
+    isGlobal: true,
+    load: [openaiConfig]
+  })
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -1,5 +1,7 @@
-<div class="result-display" *ngIf="loading || result">
-    <app-loader *ngIf="loading" [loaderSrc]="'assets/loader.svg'" [size]="'3rem'">
+<div class="result-display">
+    <h1>Your analysis results:</h1>
+
+    <app-loader *ngIf="loading" [loaderSrc]="'assets/loader.svg'" [size]="'200px'">
     </app-loader>
 
     <div *ngIf="!loading && result">
