@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="prompt-input">
+    <div class="prompt-input-container">
+        <textarea class="input-area" formControlName="text" rows="6" placeholder="Type text..."></textarea>
+
+        <button class="submit-button" type="submit" [disabled]="form.invalid">
+            Analyze
+        </button>
+    </div>
+</form>

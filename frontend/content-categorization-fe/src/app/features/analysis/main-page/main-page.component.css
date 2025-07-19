@@ -1,0 +1,48 @@
+.analysis-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--background-color);
+    height: 100%;
+    overflow-x: hidden;
+}
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: var(--primary-font-color);
+    padding-top: 2rem;
+}
+
+.title {
+    font-size: 4rem;
+    color: var(--light-yellow);
+    padding-top: 0;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: flex-start;
+    gap: 6rem;
+    overflow: hidden;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+.error-message {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    color: #be2d2d;
+}
+main-content app-result {
+    display: block;
+    min-width: 400px;
+}
+

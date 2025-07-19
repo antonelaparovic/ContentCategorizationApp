@@ -1,0 +1,15 @@
+<div class="analysis-page">
+    <p class="subtitle">🎉 Fast and easily analyze your text and discover the tone and keywords.</p>
+    <h1 class="title">Content categorization</h1>
+
+    <div class="main-content">
+        <div class="input-container">
+            <app-prompt-input (submitText)="onTextSubmit($event)"></app-prompt-input>
+
+            <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+            </div>
+        </div>
+        <app-result [result]="result" [loading]="loading"></app-result>
+    </div>
+</div>
