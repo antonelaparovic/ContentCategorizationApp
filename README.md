@@ -39,16 +39,22 @@
 ## Installation
 
 ### Clone repo
-`git clone https://github.com/antonelaparovic/ContentCategorizationApp.git`
-`cd ContentCategorizationApp`
+```
+git clone https://github.com/antonelaparovic/ContentCategorizationApp.git
+cd ContentCategorizationApp
+```
 
 ### Open Terminal, navigate to backend folder, install backend dependencies
-`cd backend`
-`npm install`
+```
+cd backend
+npm install
+```
 
 ### Open new Terminal, navigate to frontend folder (from root folder), install frontend dependencies
-`cd frontend/content-categorization-fe`
-`npm install`
+```
+cd frontend/content-categorization-fe`
+npm install
+```
 
 ---
 
@@ -61,13 +67,17 @@ open .env.example file in backend folder, enter valid OPENAI_API_KEY, rename fil
 ## Running locally
 
 ### Backend
-`cd backend`
-`npm run start:dev`
+```
+cd backend
+npm run start:dev
+```
 
 ### Frontend
-`cd frontend/content-categorization-fe`
-`npm run build`
-`ng serve`
+```
+cd frontend/content-categorization-fe
+npm run build
+ng serve
+```
 
 Open http://localhost:4200, enter text, click Analyze
 
