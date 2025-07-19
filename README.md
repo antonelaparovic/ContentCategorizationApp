@@ -31,7 +31,7 @@
 
 ## Prerequisites
 
-- **Node.js**  
+- **Node.js (version 18+)**  
 - **npm**
 
 ---
@@ -52,7 +52,7 @@ npm install
 
 ### Open new Terminal, navigate to frontend folder (from root folder), install frontend dependencies
 ```
-cd frontend/content-categorization-fe`
+cd frontend/content-categorization-fe
 npm install
 ```
 
