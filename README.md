@@ -34,34 +34,40 @@
 - **Node.js**  
 - **npm**
 
+---
+
 ## Installation
 
-# Clone repo
-git clone https://github.com/antonelaparovic/ContentCategorizationApp.git
-cd ContentCategorizationApp
+### Clone repo
+`git clone https://github.com/antonelaparovic/ContentCategorizationApp.git`
+`cd ContentCategorizationApp`
 
-# Open Terminal, navigate to backend folder, install backend dependencies
-cd backend
-npm install
+### Open Terminal, navigate to backend folder, install backend dependencies
+`cd backend`
+`npm install`
 
-# Open new Terminal, navigate to frontend folder (from root folder), install frontend dependencies
-cd frontend/content-categorization-fe
-npm install
+### Open new Terminal, navigate to frontend folder (from root folder), install frontend dependencies
+`cd frontend/content-categorization-fe`
+`npm install`
+
+---
 
 ## Configuration
 
 open .env.example file in backend folder, enter valid OPENAI_API_KEY, rename file to .env (check if ignored for git)
 
+---
+
 ## Running locally
 
-# Backend
-cd backend
-npm run start:dev
+### Backend
+`cd backend`
+`npm run start:dev`
 
-# Frontend
-cd frontend/content-categorization-fe
-npm run build
-ng serve
+### Frontend
+`cd frontend/content-categorization-fe`
+`npm run build`
+`ng serve`
 
 Open http://localhost:4200, enter text, click Analyze
 
