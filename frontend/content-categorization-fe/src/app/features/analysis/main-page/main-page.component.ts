@@ -33,23 +33,17 @@ export class MainPageComponent {
     var prompt: AnalysisRequest = {
       text: text
     }
-    this.analysisService.analyzeText(prompt).pipe(
-    finalize(() => this.loading = false),
 
-      catchError((err: HttpErrorResponse) => {
+    this.analysisService.analyzeText(prompt).pipe(
+      finalize(() => this.loading = false)
+    ).subscribe({
+      next: (res) => {
+        this.result = res;
+      },
+      error: (err: HttpErrorResponse) => {
         this.errorMessage = err.error?.message
-          || 'An error occured, try again';
-        return of<AnalysisResponse | null>(null);
-      })
-    ).subscribe(res => {
-        if (res) {
-          // success
-          this.result = res;
-          this.errorMessage = (res as any).message || null;
-        } else {
-          // error
-          this.result = null;
-        }
-      });
+          || 'An unexpected error occured. Try again later.';
+      }
+    });
   }
 }
