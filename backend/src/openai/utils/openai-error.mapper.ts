@@ -1,10 +1,6 @@
 import {
     BadRequestException,
-    UnauthorizedException,
-    ForbiddenException,
-    NotFoundException,
     ServiceUnavailableException,
-    BadGatewayException,
     HttpException,
     HttpStatus,
 } from '@nestjs/common';
@@ -14,9 +10,7 @@ export class OpenAIErrorMapper {
     // error from openai sdk mapping to common nest error
     static map(err: unknown): HttpException {
         if (err instanceof APIError) {
-            const status = err.status;
-            const msg = err.message;
-
+         
             switch (err.status) {
                 case 400:
                     return new BadRequestException(
